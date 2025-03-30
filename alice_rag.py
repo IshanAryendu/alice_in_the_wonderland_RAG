@@ -89,8 +89,29 @@ def debug_alice_file():
         print("Checking for key markers:")
         markers = [
             "CHAPTER I", 
-            "CHAPTER II", 
+            "CHAPTER II",
+            "CHAPTER III",
+            "CHAPTER IV",
+            "CHAPTER V",
+            "CHAPTER VI",
+            "CHAPTER VII",
+            "CHAPTER VIII",
+            "CHAPTER IX",
+            "CHAPTER X",
+            "CHAPTER XI",
+            "CHAPTER XII", 
             "DOWN THE RABBIT-HOLE",
+            "THE POOL OF TEARS",
+            "A CAUCUS-RACE AND A LONG TALE",
+            "THE RABBIT SENDS IN A LITTLE BILL",
+            "ADVICE FROM A CATERPILLAR",
+            "PIG AND PEPPER",
+            "A MAD TEA-PARTY",
+            "THE QUEEN'S CROQUET-GROUND",
+            "THE MOCK TURTLE'S STORY",
+            "THE LOBSTER QUADRILLE",
+            "WHO STOLE THE TARTS?",
+            "ALICE'S EVIDENCE",
             "[Sidenote:",
             "CONTENTS",
             "*** START OF THE PROJECT GUTENBERG EBOOK"
@@ -209,7 +230,7 @@ if __name__ == "__main__":
         vectorstore = create_rag()
     else:
         print("Loading existing RAG system...")
-        embeddings = OllamaEmbeddings(model="gemma3:1b")
+        embeddings = OllamaEmbeddings(model="nomic-embed-text", base_url="http://localhost:11434")
         vectorstore = Chroma(persist_directory="./alice_chroma_db", embedding_function=embeddings)
     
     # Interactive query loop
